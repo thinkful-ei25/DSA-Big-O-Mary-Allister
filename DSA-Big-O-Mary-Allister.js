@@ -111,7 +111,7 @@ function efficientSearch(array, item) {
 
 console.log('Efficient Search:', efficientSearch([1,2,3,4,5,6], 7))
 
-////////example of 0 (1)
+////////example of O (1)
 
 function findRandomElement(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
