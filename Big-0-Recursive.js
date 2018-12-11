@@ -95,7 +95,7 @@ function add(num) {
 }
 
 add(99)
-
+////example of O(n)
 function factorial(n) {  
     // Base Case - when n is equal to 0, we stop the recursion
     if (n === 0) {
@@ -106,8 +106,11 @@ function factorial(n) {
     return n * factorial(n - 1);
   }
 
+
+  /////////////////////////////////////////O(2^n)
+  let count= 0;
   function fibonacci(n) {
-    // Base case
+   count++;
     if (n <= 0) {
       return 0;
     }
@@ -119,6 +122,9 @@ function factorial(n) {
     return fibonacci(n - 1) + fibonacci(n - 2);	
   }
 
+
+
+  //////////////////////////////////////////////////// o(2^n)
   function anagrams(prefix, str){
     if(str.length <= 1){
         console.log(`The anagram is ${prefix}${str}`);
@@ -156,3 +162,14 @@ function traverse(animalHierarchy, parent) {
 }
 
 
+animals{
+    mammals{
+        dogs{
+            husky
+            golden
+        }
+        cats{
+            bengal
+        }
+    }
+}
