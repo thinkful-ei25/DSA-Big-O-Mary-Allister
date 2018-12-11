@@ -53,3 +53,85 @@
 //     return 'done'
 // }
 // console.log(createPairs([1,2,3,4,5]))
+
+
+//////// example of O(n)
+function generateFib(num) {
+  let result = [];
+  for (let i = 1; i <= num; i++) {
+
+    // we're adding the first item
+    // to the result list, append the
+    // number 0 to results
+    if (i === 1) {
+      result.push(0);
+    }
+    // ...and if it's the second item
+    // append 1
+    else if (i == 2) {
+      result.push(1);
+    }
+
+    // otherwise, sum the two previous result items, and append that value to results.
+    else {
+      result.push(result[i - 2] + result[i - 3]);
+    }
+  }
+  // once the for loop finishes
+  // we return `result`.
+  return result;
+}
+
+console.log('Generate Fib:', generateFib(7));
+
+//////// example of O log(n)
+
+function efficientSearch(array, item) {
+  let minIndex = 0;
+  let maxIndex = array.length - 1;
+  let currentIndex;
+  let currentElement;
+
+  while (minIndex <= maxIndex) {
+      currentIndex = Math.floor((minIndex + maxIndex) / 2);
+      currentElement = array[currentIndex];
+
+      if (currentElement < item) {
+          minIndex = currentIndex + 1;
+      }
+      else if (currentElement > item) {
+          maxIndex = currentIndex - 1;
+      }
+      else {
+          return currentIndex;
+      }
+  }
+  return -1;
+}
+
+console.log('Efficient Search:', efficientSearch([1,2,3,4,5,6], 7))
+
+////////example of 0 (1)
+
+function findRandomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+console.log('Random element: ', findRandomElement([1, 3, 5, 7, 9, 11]))
+
+//////// example of O (n)
+
+function isPrime(n) {
+  // if n is less than 2 or a decimal, it's not prime
+  if (n < 2 || n % 1 != 0) {
+      return false;
+  }
+  // otherwise, check if `n` is divisible by any integer
+  // between 2 and n.
+  for (let i = 2; i < n; ++i) {
+      if (n % i == 0) return false;
+  }
+  return true;
+}
+
+console.log('is prime?:', isPrime(37))
