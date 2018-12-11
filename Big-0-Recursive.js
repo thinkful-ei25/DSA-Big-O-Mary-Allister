@@ -108,23 +108,38 @@ function factorial(n) {
 
 
   /////////////////////////////////////////O(2^n)
-  let count= 0;
-  function fibonacci(n) {
-   count++;
-    if (n <= 0) {
-      return 0;
-    }
-    // Base case
-    if (n <= 2) {
-      return 1;
-    }	
-    // Recursive case
-    return fibonacci(n - 1) + fibonacci(n - 2);	
-  }
+//   let count= 0;
+//   function fibonacci(n) {
+//    count++;
+//     if (n <= 0) {
+//       return 0;
+//     }
+//     // Base case
+//     if (n <= 2) {
+//       return 1;
+//     }	
+//     // Recursive case
+//     return fibonacci(n - 1) + fibonacci(n - 2);	
+//   }
 
+//   let count = 0;
+// let cache = [0, 1];
+// function fibonacci(n) {
+//     count++;
+//     if (n < cache.length) {
+//         return cache[n];
+//     }
+//     // Base case
+//     // if (n <= 2) {
+//     //   return 1;
+//     // }	
+//     // Recursive case
+//     return cache[n] = fibonacci(n - 1) + fibonacci(n - 2);
+// }
+// console.log(fibonacci(50))
+// console.log(count)
 
-
-  //////////////////////////////////////////////////// o(2^n)
+  //////////////////////////////////////////////////// O(2^n)
   function anagrams(prefix, str){
     if(str.length <= 1){
         console.log(`The anagram is ${prefix}${str}`);
@@ -153,7 +168,7 @@ const animalHierarchy = [
     {id: 'Bengal', parent:'Cats' }
 ]
 
-// ==============================
+/////////////////// O(n) ~ O(n^2) 
 function traverse(animalHierarchy, parent) {
     let node = {};
     animalHierarchy.filter(item => item.parent === parent)
